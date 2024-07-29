@@ -1,0 +1,95 @@
+
+
+
+:root {
+
+  --size: 80px;
+
+  /* COLORS */
+  --bg: #EFF3C0;
+  --primary: #98324F;
+  --secondary: #FEFFFE;
+  --button: #E0408D;
+  --text: #292929;
+  --text-light: #aeaeae;
+
+
+  /* SPACING */
+  --space: 1rem;
+  --space-sm: 0.5rem;
+  --space-lg: 2rem;
+
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  background-color: var(--bg);
+}
+
+
+.card {
+  width: 100%;
+  max-width: 250px;
+  height: 550px;
+  background-color: var(--secondary);
+  border-radius: 40px;
+  padding: var(--space-lg);
+}
+
+
+.card__image {
+  width: var(--size);
+  height: var(--size);
+  border-radius: 100%;
+  object-fit: cover;
+}
+
+.card__social{
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.card__social-item svg {
+  width: 20px;
+  height: 20px;
+}
+
+
+/* CLASES de los COLORES */
+/* .bg-primary {
+  background-color: var(--primary);
+  color: var(--secondary);
+}
+
+.bg-secondary {
+  background-color: var(--secondary);
+  color: var(--primary);
+}
+
+.bg-button {
+  background-color: var(--button);
+  color: var(--secondary);
+}
+
+.bg-text {
+  color: var(--text);
+}
+
+.bg-text-light {
+  color: var(--text-light);
+} */
