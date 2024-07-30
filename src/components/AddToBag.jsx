@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../../styles/2-add-to-card/AddToBag.css';
+import '../styles/AddToBag.css';
 
 const shop = [{
   shopName: "Zara",
