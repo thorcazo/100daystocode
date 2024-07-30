@@ -28,7 +28,7 @@ export default function ProfileCard() {
             <path d="M107.022 221.739L40.5745 180.077C-30.9779 135.214 -1.75615 24.8627 82.622 21.2911L583.719 0.0806694C653.667 -2.88009 697.653 74.5158 659.316 133.097L619.499 193.939C595.322 230.883 547.098 243.517 507.913 223.173L393.496 163.772C368.976 151.042 339.833 150.867 315.163 163.301L191.414 225.673C164.533 239.222 132.526 237.729 107.022 221.739Z" fill="" />
           </svg>
         </div>
-        <img className='card__image' src="./assets/mi-foto.jpg" alt="" />
+        <img className='card__image' src="./assets/1-profile-card/mi-foto.jpg" alt="" />
       </div>
       <div className='card__data-user' >
         <div className='card__name'>
