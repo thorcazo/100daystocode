@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../styles/AddToBag.css';
 
 const shop = [{
   shopName: "Zara",
   message: {
-    description: "El contenido ha sido obtenido de ZARA Oficial",
+    description: "El contenido ha sido obtenido de",
     url: "https://www.zara.com/es/es/mono-manga-sisa-pierna-balloon-p08119730.html?v1=369278207&v2=2419517"
   },
   clothes: {
@@ -13,8 +13,9 @@ const shop = [{
       brand: "Zara",
       model: "MONO MANGA SISA PIERNA BALLOON",
       description: "Mono de cuello solapa y manga sisa. Bolsillos delanteros y bolsillos de plastrón en espalda. Detalle de trabillas laterales con botones en cintura. Pierna globo con el bajo acabado recto. Cierre frontal con cremallera y botones.",
-      price: 39.99,
-      discount: 25,
+      price: "39.99",
+      discount: "25",
+      hasDiscount: true,
       sizes: ["XS", "S", "M", "L"],
       images: [
         {
@@ -50,29 +51,110 @@ export default function AddToBag() {
   const { shopName, message, clothes } = shop[0];
   const { monosisa } = clothes;
 
+  const [mainImage, setMainImage] = useState(monosisa.images[0]);
+  const [isFading, setIsFading] = useState(false);
+  const [modal, setModal] = useState(false);
+
+  const handleThumbClick = (image) => {
+    console.log(image.id, mainImage.id);
+    if (image.id !== mainImage.id) {
+      setIsFading(true);
+      setTimeout(() => {
+
+        setMainImage(image);
+        setIsFading(false);
+
+      }, 150);
+    }
+  }
+
+  const handleModal = (image) => {
+    if (modal) setModal(false);
+    else
+    setModal(true);
+
+
+  }
+
+
+  const priceFinal = (monosisa.price - (monosisa.price * monosisa.discount / 100)).toFixed(2);
+
   return (
-    <article className="add-to-bag">
-      <section>
-        {/* galeria de imagenes */}
-        <div className='galery'>
-          {
-            monosisa.images.map((image) => (
-              <img width={100}  key={image.id} src={image.url} alt={monosisa.model} />
-            ))
-          }
+    <>
+      <article className="card">
+        <section className='card__galery'>
+          {/* galeria de imagenes */}
+          <div className='galery-thumb'>
+            {
+              monosisa.images.map((image) => (
+                <img
+                  key={image.id}
+                  src={image.url}
+                  alt={monosisa.model}
+                  onClick={() => handleThumbClick(image)}
+                  className={image.id === mainImage.id ? 'active' : ''}
 
-        </div>
-        <div className='img-full'>
+                />
+              ))
+            }
 
-        </div>
+          </div>
+          <div className={modal ? 'card__img-full active-full' : 'card__img-full'}
+           onClick={() => handleModal(mainImage)} >
+            <img src={mainImage.url} alt={monosisa.model} className={isFading ? 'fade-out' : ''} />
 
-      </section>
-      <section>
-        {/* descripcion y datos del producto */}
-        <h2>{monosisa.model}</h2>
+          </div>
 
-      </section>
+        </section>
+        <section className='card__content'>
+          {/* descripcion y datos del producto */}
+          <div className='content__text' >
+            <h1>{shopName}</h1>
+            <h2 >{monosisa.model}</h2>
+            <p>{monosisa.description}</p>
+            <p>Leer más</p>
+          </div>
+          <div className='card__price'>
+            <div>
+              {monosisa.hasDiscount ? (
+                <>
+                  <div>
+                    <p className='price__final'>{priceFinal}€</p>
+                    <span className='price__discount'>{monosisa.discount}%</span>
+                  </div>
+                  <p className='price__original'>{monosisa.price}€</p>
+                </>
+              ) : (
+                <p className='price__final'>{monosisa.price}€</p>
+              )}
+            </div>
 
-    </article>
+          </div>
+          <div className='card__choose-size'>
+            {/* CHOOSE SIZE - input radio */}
+            <label>Choose size</label>
+            <div className='card__sizes'>
+              {
+                monosisa.sizes.map((size) => (
+                  <React.Fragment key={size}>
+                    <input type='radio' name='size' value={size} id={size} />
+                    <label htmlFor={size} className='size'>
+                      {size}
+                    </label>
+                  </React.Fragment>
+                ))
+              }
+            </div>
+          </div>
+          <div className='card__actions' >
+            <button className='btn'>Add to bag</button>
+          </div>
+
+
+        </section>
+
+      </article>
+      <span className='message' >{message.description} <a target='_blank' href={message.url}> Tiendas Zara Oficial</a>  </span>
+    </>
   );
 }
