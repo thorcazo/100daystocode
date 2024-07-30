@@ -1,7 +1,7 @@
 import './App.css'
 
-import ProfileCard from './components/challenges/ProfileCard';
-import AddToBag from './components/challenges/AddToBag';
+import ProfileCard from './components/challenges/1-Profile-card/ProfileCard';
+import AddToBag from './components/challenges/2-Add-to-card/AddToBag';
 
 function App() {
 

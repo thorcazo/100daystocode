@@ -1,13 +1,13 @@
 /* CSS */
-import '../../styles/ProfileCard.css';
+import '../../../styles/1-profile-card/ProfileCard.css';
 
 
 /* COMPONENTS ICONS */
-import Linkedin from '../icons/Linkedin';
-import Facebook from '../icons/Facebook';
-import Twitter from '../icons/Twitter';
-import Instagram from '../icons/Instagram';
-import Dribbble from '../icons/Dribbble';
+import Linkedin from '../../icons/Linkedin';
+import Facebook from '../../icons/Facebook';
+import Twitter from '../../icons/Twitter';
+import Instagram from '../../icons/Instagram';
+import Dribbble from '../../icons/Dribbble';
 
 
 
