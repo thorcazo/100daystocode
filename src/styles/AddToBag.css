@@ -79,8 +79,9 @@
 
 .card__img-full img {
   width: 250px;
-  height: auto;
+  height: 100%;
   object-fit: cover;
+  object-position: top;
   border-radius: 0.2rem;
   opacity: 1;
   top: 0px;
@@ -90,7 +91,7 @@
 }
 
 .card__img-full img.fade-out {
-  left: 50px;
+
   transition: all 0.2s ease-in-out;
   opacity: 0;
 }
@@ -102,11 +103,10 @@
   top: 0px;
   box-shadow: 0 0 1px 2000px rgba(0, 0, 0, 0.5);
   cursor: pointer;
-  
+
 }
 
 /* CONTENT */
-
 .card__content {
   padding: 0 1.2rem;
   display: flex;
@@ -118,6 +118,7 @@
   display: flex;
   flex-flow: column;
   gap: 0.5rem;
+  transition: all 0.2s ease-in-out;
 }
 
 .content__text h2 {
@@ -126,16 +127,16 @@
   text-wrap: pretty;
 }
 
-.content__text>p {
-  font-family: 'Roboto', sans-serif;
+.line-clamp {
   display: -webkit-box;
-  font-size: 0.8rem;
-  color: var(--description);
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  text-overflow: ellipsis;
 }
+
+
+
+
 
 /* PRICE */
 .card__price {

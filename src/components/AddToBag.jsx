@@ -54,28 +54,25 @@ export default function AddToBag() {
   const [mainImage, setMainImage] = useState(monosisa.images[0]);
   const [isFading, setIsFading] = useState(false);
   const [modal, setModal] = useState(false);
+  const [clampText, setClampText] = useState(false);
 
   const handleThumbClick = (image) => {
-    console.log(image.id, mainImage.id);
     if (image.id !== mainImage.id) {
       setIsFading(true);
       setTimeout(() => {
-
         setMainImage(image);
         setIsFading(false);
-
       }, 150);
     }
   }
 
   const handleModal = (image) => {
-    if (modal) setModal(false);
-    else
-    setModal(true);
-
-
+    setModal(!modal);
   }
 
+  const handleClampText = () => {
+    setClampText(!clampText);
+  }
 
   const priceFinal = (monosisa.price - (monosisa.price * monosisa.discount / 100)).toFixed(2);
 
@@ -93,26 +90,22 @@ export default function AddToBag() {
                   alt={monosisa.model}
                   onClick={() => handleThumbClick(image)}
                   className={image.id === mainImage.id ? 'active' : ''}
-
                 />
               ))
             }
-
           </div>
           <div className={modal ? 'card__img-full active-full' : 'card__img-full'}
-           onClick={() => handleModal(mainImage)} >
+            onClick={() => handleModal(mainImage)} >
             <img src={mainImage.url} alt={monosisa.model} className={isFading ? 'fade-out' : ''} />
-
           </div>
-
         </section>
         <section className='card__content'>
           {/* descripcion y datos del producto */}
           <div className='content__text' >
             <h1>{shopName}</h1>
             <h2 >{monosisa.model}</h2>
-            <p>{monosisa.description}</p>
-            <p>Leer más</p>
+            <p className='line-clamp'>{monosisa.description}</p>
+          
           </div>
           <div className='card__price'>
             <div>
@@ -128,7 +121,6 @@ export default function AddToBag() {
                 <p className='price__final'>{monosisa.price}€</p>
               )}
             </div>
-
           </div>
           <div className='card__choose-size'>
             {/* CHOOSE SIZE - input radio */}
@@ -149,12 +141,9 @@ export default function AddToBag() {
           <div className='card__actions' >
             <button className='btn'>Add to bag</button>
           </div>
-
-
         </section>
-
       </article>
-      <span className='message' >{message.description} <a target='_blank' href={message.url}> Tiendas Zara Oficial</a>  </span>
+      <span className='message'>{message.description} <a target='_blank' href={message.url}> Tiendas Zara Oficial</a></span>
     </>
   );
 }
