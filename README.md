@@ -9,12 +9,12 @@ I hope you'll complete all 100 of them and land your dream job as a Web Dev! ðŸ«
 
 
 # 1. Profile Card
-![alt text](images_readme/image.png)
+![alt text](challenge/1.png)****
 
 It is a perfect challenge for practicing Flexbox and improving your CSS skills.
 
 # 2. Add to Bag
-Image description
+![alt text](challenge/2.png)
 
 Enhance your interactive design skills by creating a dynamic shopping cart experience.
 

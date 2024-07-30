@@ -1,9 +1,6 @@
-
-
-
 :root {
 
-  --size: 80px;
+  --size: 95px;
 
   /* COLORS */
   --bg: #EFF3C0;
@@ -17,7 +14,19 @@
   /* SPACING */
   --space: 1rem;
   --space-sm: 0.5rem;
+  --space-md: 1.2rem;
   --space-lg: 2rem;
+  --space-xl: 2.5rem;
+
+
+  /* FONT SIZE */
+  --font-xs: 0.6rem;
+  --font-sm: 0.8rem;
+  --font-md: 1rem;
+  --font-lg: 1.5rem;
+  --font-xl: 2rem;
+
+
 
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
@@ -30,26 +39,60 @@
   box-sizing: border-box;
 }
 
-html{
+html {
   width: 100%;
   height: 100%;
   margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  
+
   background-color: var(--bg);
 }
 
 
 .card {
   width: 100%;
-  max-width: 250px;
-  height: 550px;
+  max-width: 330px;
+  height: 100%;
   background-color: var(--secondary);
   border-radius: 40px;
-  padding: var(--space-lg);
+  padding: var(--space) var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  gap: var(--space-md);
+
 }
+
+.card__image-content {
+  margin: 0 0 5.2rem 0;
+}
+
+
+
+.card .svg {
+  width: 500px;
+  position: absolute;
+  fill: var(--primary);
+  z-index: -1;
+  top: -50px;
+  left: -90px;
+}
+
+.card .svg2 {
+  width: 500px;
+  position: absolute;
+  fill: var(--button);
+  z-index: -2;
+  top: -40px;
+  left: -80px;
+}
+
+
 
 
 .card__image {
@@ -57,39 +100,92 @@ html{
   height: var(--size);
   border-radius: 100%;
   object-fit: cover;
+
 }
 
-.card__social{
+.card__data-user {
   display: flex;
-  gap: var(--space-sm);
+  flex-direction: column;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+
+.card__name {
+  text-align: center;
+
+}
+
+.card__name-title {
+  font-size: 1.5rem;
+  line-height: 1;
+  font-weight: 700;
+  color: var(--text);
+
+  letter-spacing: 2px;
+}
+
+.card__name-nick {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--text-light);
+
+}
+
+
+
+.card__social {
+
+  display: flex;
+  gap: var(--space-md);
+  justify-content: center;
+  align-items: center;
+}
+
+.card__social a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .card__social-item svg {
+
   width: 20px;
   height: 20px;
 }
 
-
-/* CLASES de los COLORES */
-/* .bg-primary {
-  background-color: var(--primary);
-  color: var(--secondary);
-}
-
-.bg-secondary {
-  background-color: var(--secondary);
-  color: var(--primary);
-}
-
-.bg-button {
-  background-color: var(--button);
-  color: var(--secondary);
-}
-
-.bg-text {
+.card__description {
   color: var(--text);
+  font-size: 0.8rem;
+  text-align: center;
+  font-weight: 700;
+  line-height: 1rem;
 }
 
-.bg-text-light {
-  color: var(--text-light);
-} */
+
+
+.card__buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--space-md);
+}
+
+
+.card__buttons button {
+
+  border: none;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: 500px;
+  font-size: var(--font-sm);
+  padding: 0.7rem 2.6rem;
+  border: 1px solid var(--text);
+  background-color: var(--secondary);
+}
+
+
+.bg-pink {
+  border: none !important;
+  background-color: var(--button) !important;
+  color: var(--secondary);
+}
