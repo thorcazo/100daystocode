@@ -44,14 +44,15 @@ export default function MainMenuItem({ icon, text }) {
             {IconComponent}
             <p>{text}</p>
           </div>
-          <Arrow className="main-menu__arrow" />
+          <Arrow className={isOpen ? 'main-menu__arrow active-arrow': 'main-menu__arrow'} />
         </div>
         <div className={isOpen ? 'content__text active-content' : 'content__text'}>
           <ul>
-            <li>Item 1</li>
-            <li>Item 2</li>
-            <li>Item 3</li>
-            <li>Item 4</li>
+            <li><a href="#">David Pastor</a></li>
+            <li><a href="#">1 de Enero</a></li>
+            <li><a href="#">Masculino</a></li>
+            <li><a href="#">Soltero</a></li>
+            <li><a href="#">672 772 171</a></li>
           </ul>
         </div>
       </div>
