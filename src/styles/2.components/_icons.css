@@ -1,0 +1,8 @@
+@import '../1.configuration/_variables.css';
+
+.icon {
+  background-color: var(--details-color);
+  padding: var(--spacing-icon);
+  border-radius: 0.4rem;
+
+}

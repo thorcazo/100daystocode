@@ -1,0 +1,46 @@
+:root {
+  --bg-color: #E7ECF1;
+  --bg-color-mobile: #FFFFFE;
+  --details-color: #E6E9FB;
+  --text-color: #06081B;
+
+
+  /* SPACING */
+  --spacing-icon: 0.25rem;
+  --spacing-1: 0.875rem;
+  /*14px*/
+  --spacing-2: 1.25rem;
+  /*20px*/
+  --spacing-3: 1.875rem;
+  /*30px*/
+
+
+
+
+  /* FONTS-SIZES */
+  --font-size-1: 0.75rem;
+  /*12px*/
+
+
+  /* GAP */
+  --gap-1: 0.5rem;
+  /*8px*/
+  --gap-2: 1rem;
+  /*16px*/
+  --gap-3: 1.5rem;
+  /*24px*/
+
+
+
+}
+
+
+h1,
+h2,
+h3,
+h4,
+p,
+span,
+a {
+  font-size: var(--font-size-1);
+}
