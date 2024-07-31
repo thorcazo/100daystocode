@@ -44,3 +44,7 @@ span,
 a {
   font-size: var(--font-size-1);
 }
+
+.border{
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
