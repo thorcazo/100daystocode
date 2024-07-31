@@ -3,6 +3,7 @@
   --bg-color-mobile: #FFFFFE;
   --details-color: #E6E9FB;
   --text-color: #06081B;
+  --hover-color: #fbfbfb;
 
 
   /* SPACING */
@@ -41,8 +42,12 @@ h3,
 h4,
 p,
 span,
-a {
+a,li {
   font-size: var(--font-size-1);
+}
+
+li {
+  list-style: none;
 }
 
 .border{

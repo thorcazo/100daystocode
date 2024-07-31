@@ -46,10 +46,13 @@ export default function MainMenuItem({ icon, text }) {
           </div>
           <Arrow className="main-menu__arrow" />
         </div>
-        <div className={ isOpen ? 'content__text active-content' : 'content__text'}>
-          <p>
-            hola
-          </p>
+        <div className={isOpen ? 'content__text active-content' : 'content__text'}>
+          <ul>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+            <li>Item 4</li>
+          </ul>
         </div>
       </div>
     </>
