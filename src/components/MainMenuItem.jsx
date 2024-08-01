@@ -23,10 +23,10 @@ const icons = {
   communityIcon: <Community />
 };
 
-export default function MainMenuItem({ icon, text }) {
+export default function MainMenuItem({ icon, text, handleOpen }) {
   const IconComponent = icons[icon] || null;
 
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(handleOpen);
 
   const handleClick = (icon) => {
     if (icon) {
@@ -44,7 +44,7 @@ export default function MainMenuItem({ icon, text }) {
           </div>
           <Arrow className={isOpen ? 'main-menu__arrow active-arrow' : 'main-menu__arrow'} />
         </div>
-        <div className={`content__text  ${isOpen ? 'active-content' : ''}`}>
+        <div className={`content__text  ${isOpen ?  'active-content' : ''}`}>
           <ContentItem handleClick={handleClick} icon={icon} />
         </div>
       </div>

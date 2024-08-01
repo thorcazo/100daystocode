@@ -53,12 +53,7 @@ export default function ContentItem({ handleClick, icon }) {
         }
         return null;
       })}
-      <div
-        className='content__back'
-        onClick={() => { handleClick(icon) }}
-      >
-        <CloseContent />
-      </div>
+
     </div>
   )
 }

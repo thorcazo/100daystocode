@@ -3,7 +3,7 @@ import React from 'react'
 export default function ContentPersonalData() {
   return (
     <div className='personal-data'>
-        {/* DATOS PRINCIPALES */}
+      {/* DATOS PRINCIPALES */}
       <div className='data__personal'>
         <h2>Datos personales</h2>
         <ul className=''>
@@ -34,7 +34,6 @@ export default function ContentPersonalData() {
           <li>Git</li>
         </ul>
       </div>
-
 
     </div>
   )

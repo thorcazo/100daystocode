@@ -2,29 +2,13 @@
 @import './_icons.css';
 
 
-/* .container {
-  display: flex;
-  align-items: center;
-  flex-flow: column;
-  height: 100vh;
-  background-color: var(--bg-color);
-  color: var(--text-color);
-
-  & h1 {
-    font-size: 1.5rem;
-    margin: var(--space-2) 0;
-    font-weight: bold;
-  }
-
-} */
-
 .mobile-navigation {
   background-color: var(--bg-color-mobile);
-  border: 1px solid rgba(0, 0, 0, 0.1);
   width: 100%;
+  min-height: 100%;
   height: 100vh;
-  overflow: hidden;
   padding: 0 var(--space-1);
+  overflow-x: hidden;
 
 }
 
@@ -226,4 +210,32 @@
     font-size: 1.5rem;
     font-weight: bold;
   }
+}
+
+/* NAV-BOTTOM */
+.nav-bottom {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  width: 100%;
+
+  & div {
+    bottom: 30px;
+    position: fixed;
+    width: max-content;
+    text-align: center;
+    border: 1px solid var(--bg-color);
+    background-color: var(--bg-color);
+    padding: var(--space-1) var(--space-2);
+    border-radius: var(--space-2);
+    border: 1px solid black;
+
+  }
+
+}
+
+.nav__menu{
+  display: flex;
+  flex-flow: row;
+  gap: var(--gap-3);
 }
