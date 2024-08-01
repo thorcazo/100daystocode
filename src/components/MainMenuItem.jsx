@@ -44,7 +44,7 @@ export default function MainMenuItem({ icon, text }) {
           </div>
           <Arrow className={isOpen ? 'main-menu__arrow active-arrow' : 'main-menu__arrow'} />
         </div>
-        <div className={`content__text ${isOpen ? 'active-content' : ''}`}>
+        <div className={`content__text  ${isOpen ? 'active-content' : ''}`}>
           <ContentItem handleClick={handleClick} icon={icon} />
         </div>
       </div>

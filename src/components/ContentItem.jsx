@@ -8,6 +8,8 @@ import ContentNotifications from './ContentNotification'
 import ContentLocation from './ContentLocation'
 import ContentCommunity from './ContentCommunity'
 
+import CloseContent from './icons/CloseContent'
+
 
 /* Asignar cada componente a un objeto dentro de un array de objetos */
 
@@ -37,14 +39,10 @@ const contentItems = [
 
 
 
+
 export default function ContentItem({ handleClick, icon }) {
   return (
-    <div className=' personal-data '>
-      <p
-        className='content__back'
-        onClick={() => { handleClick(icon) }}
-      >volver
-      </p>
+    <div className='personal-data'>
       {contentItems.map((item, index) => {
         if (item.icon === icon) {
           return (
@@ -55,6 +53,12 @@ export default function ContentItem({ handleClick, icon }) {
         }
         return null;
       })}
+      <div
+        className='content__back'
+        onClick={() => { handleClick(icon) }}
+      >
+        <CloseContent />
+      </div>
     </div>
   )
 }
