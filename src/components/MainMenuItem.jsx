@@ -9,6 +9,11 @@ import Community from './icons/Community'
 import Arrow from './icons/Arrow'
 
 
+
+/* COMPONENTS */
+import ContentItem from './ContentItem'
+
+
 // Objeto de mapeo de iconos
 const icons = {
   userIcon: <UserIcon />,
@@ -17,10 +22,6 @@ const icons = {
   locationIcon: <Location />,
   communityIcon: <Community />
 };
-
-
-
-
 
 export default function MainMenuItem({ icon, text }) {
   const IconComponent = icons[icon] || null;
@@ -35,12 +36,8 @@ export default function MainMenuItem({ icon, text }) {
 
   return (
     <>
-      <div className='main-menu__item'
-
-      >
-        <div
-          onClick={() => handleClick(icon)}
-        >
+      <div className='main-menu__item'>
+        <div onClick={() => handleClick(icon)}>
           <div className='item__content'>
             {IconComponent}
             <p>{text}</p>
@@ -48,17 +45,7 @@ export default function MainMenuItem({ icon, text }) {
           <Arrow className={isOpen ? 'main-menu__arrow active-arrow' : 'main-menu__arrow'} />
         </div>
         <div className={`content__text ${isOpen ? 'active-content' : ''}`}>
-          <div>
-            <p
-              className='content__back'
-              onClick={() => { handleClick(icon) }}
-            >volver</p>
-            <p>David Pastor</p>
-            <p>01 Enero 1987</p>
-            <p>Lorem ipsum dolor sit.</p>
-            <p>Lorem ipsum dolor sit.</p>
-            <p>Lorem ipsum dolor sit.</p>
-          </div>
+          <ContentItem handleClick={handleClick} icon={icon} />
         </div>
       </div>
     </>
