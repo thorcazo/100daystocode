@@ -12,7 +12,7 @@
 
   & h1 {
     font-size: 1.5rem;
-    margin: var(--spacing-2) 0;
+    margin: var(--space-2) 0;
     font-weight: bold;
   }
 
@@ -24,7 +24,7 @@
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  padding: 0 var(--spacing-1);
+  padding: 0 var(--space-1);
 
 }
 
@@ -40,7 +40,7 @@
   align-items: center;
   flex-flow: row;
   gap: var(--gap-2);
-  padding: var(--spacing-2) 0;
+  padding: var(--space-2) 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   height: 15%;
 
@@ -73,7 +73,7 @@
 .navigation__main-menu {
   display: flex;
   flex-flow: column;
-  padding: var(--spacing-2) 0;
+  padding: var(--space-2) 0;
   gap: var(--gap-1);
   font-weight: bold;
   height: 100%;
@@ -87,7 +87,6 @@
   border-radius: 10px;
   overflow: hidden;
   transition: all 0.2s ease-in-out;
-
 
 }
 
@@ -110,6 +109,11 @@
   flex-flow: row;
   align-items: center;
   cursor: pointer;
+
+  & p {
+    font-weight: bold;
+
+  }
 }
 
 .main-menu__arrow {
@@ -171,13 +175,55 @@
 .personal-data {
   width: 100%;
   height: 100%;
-  padding: var(--spacing-1);
+  padding: var(--space-1);
   display: flex;
   flex-flow: column;
   justify-content: space-between;
   position: relative;
 }
 
-.personal-data h1 {
-  font-size: 2rem;
+.personal-data h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.data__personal {
+  border: 1px solid var(--bg-color);
+  border-radius: var(--space-2);
+  padding: var(--space-2);
+  display: flex;
+  flex-flow: column;
+  gap: var(--gap-1);
+  margin-top: var(--space-1);
+}
+
+.data__profesional {
+  border: 1px solid var(--bg-color);
+  border-radius: var(--space-2);
+  padding: var(--space-2);
+  display: flex;
+  flex-flow: column;
+  gap: var(--gap-1);
+  margin-top: var(--space-1);
+
+  & h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+}
+
+
+.data__skills {
+  border: 1px solid var(--bg-color);
+  border-radius: var(--space-2);
+  padding: var(--space-2);
+  display: flex;
+  flex-flow: column;
+  gap: var(--gap-1);
+  margin-top: var(--space-1);
+
+  & h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
 }

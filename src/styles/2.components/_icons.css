@@ -2,7 +2,7 @@
 
 .icon {
   background-color: var(--details-color);
-  padding: var(--spacing-icon);
+  padding: var(--space-icon);
   border-radius: 0.4rem;
 
 }
