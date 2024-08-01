@@ -30,30 +30,35 @@ export default function MainMenuItem({ icon, text }) {
   const handleClick = (icon) => {
     if (icon) {
       setIsOpen(!isOpen);
-      console.log(isOpen);
     }
   }
 
   return (
     <>
       <div className='main-menu__item'
-        onClick={() => handleClick(icon)}
+
       >
-        <div>
+        <div
+          onClick={() => handleClick(icon)}
+        >
           <div className='item__content'>
             {IconComponent}
             <p>{text}</p>
           </div>
-          <Arrow className={isOpen ? 'main-menu__arrow active-arrow': 'main-menu__arrow'} />
+          <Arrow className={isOpen ? 'main-menu__arrow active-arrow' : 'main-menu__arrow'} />
         </div>
-        <div className={isOpen ? 'content__text active-content' : 'content__text'}>
-          <ul>
-            <li><a href="#">David Pastor</a></li>
-            <li><a href="#">1 de Enero</a></li>
-            <li><a href="#">Masculino</a></li>
-            <li><a href="#">Soltero</a></li>
-            <li><a href="#">672 772 171</a></li>
-          </ul>
+        <div className={`content__text ${isOpen ? 'active-content' : ''}`}>
+          <div>
+            <p
+              className='content__back'
+              onClick={() => { handleClick(icon) }}
+            >volver</p>
+            <p>David Pastor</p>
+            <p>01 Enero 1987</p>
+            <p>Lorem ipsum dolor sit.</p>
+            <p>Lorem ipsum dolor sit.</p>
+            <p>Lorem ipsum dolor sit.</p>
+          </div>
         </div>
       </div>
     </>
